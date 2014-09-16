@@ -1,0 +1,38 @@
+---
+abstract: 'L<PkgVersion|Dist::Zilla::Plugin::PkgVersion> for block packages.'
+author:
+  - 'Erik Carlsson <csson@cpan.org>'
+build_requires:
+  Test::DZil: '0'
+  Test::More: '0.96'
+  autodie: '2.00'
+configure_requires:
+  Module::Build::Tiny: '0.037'
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.140640'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Dist-Zilla-Plugin-PkgVersion-Block
+no_index:
+  directory:
+    - t
+    - xt
+    - inc
+    - share
+    - eg
+    - examples
+requires:
+  Moose: '0.92'
+  MooseX::Types::Perl: '0'
+  PPI: '1.215'
+  namespace::sweep: '0.006'
+  perl: v5.14.0
+resources:
+  bugtracker: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block/issues
+  homepage: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block
+  repository: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block.git
+version: '0.0100'
+x_contributors:
+  - 'Erik Carlsson <info@code301.com>'

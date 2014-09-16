@@ -1,0 +1,61 @@
+NAME
+    Dist::Zilla::Plugin::PkgVersion::Block - PkgVersion for block packages.
+
+SYNOPSIS
+        # dist.ini
+        [PkgVersion::Block]
+
+DESCRIPTION
+    This plugin turns:
+
+        package My::Package {
+            ...
+        }
+
+    into:
+
+        package My::Package 0.01 {
+            ...
+        }
+
+    for all packages in the distribution.
+
+    The block package syntax was introduced in Perl 5.14, so this plugin is
+    only usable in projects that only support 5.14+.
+
+    There are no attributes:
+
+        Having an existing assignment to $VERSION in the file is a fatal
+        error.
+
+        Packages with a version number between the namespace and the block
+        are silently skipped.
+
+KNOWN PROBLEMS
+    In files with more than one package block it is currently necessary to
+    end (all but the last) package blocks with a semicolon. Otherwise only
+    the first package will get a version number:
+
+        package My::Package {
+            ...
+        };
+
+        package My::Package::Other {
+            ...
+        }
+
+SEE ALSO
+    *   Dist::Zilla::Plugin::PkgVersion (on which this is based)
+
+    *   Dist::Zilla::Plugin::OurPkgVersion
+
+AUTHOR
+    Erik Carlsson <info@code301.com>
+
+COPYRIGHT
+    Copyright 2014- Erik Carlsson
+
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
