@@ -33,6 +33,6 @@ resources:
   bugtracker: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block/issues
   homepage: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block
   repository: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block.git
-version: '0.0100'
+version: '0.0101'
 x_contributors:
   - 'Erik Carlsson <info@code301.com>'

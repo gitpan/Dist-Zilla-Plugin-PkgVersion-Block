@@ -1,5 +1,5 @@
 package Dist::Zilla::Plugin::PkgVersion::Block {
-$Dist::Zilla::Plugin::PkgVersion::Block::VERSION = '0.0100';
+$Dist::Zilla::Plugin::PkgVersion::Block::VERSION = '0.0101';
 use 5.14.0;
     use Moose;
     with('Dist::Zilla::Role::FileMunger',
@@ -72,35 +72,23 @@ use 5.14.0;
             foreach my $token ($stmt->tokens) {
                 ++$count;
 
-                last if $count == 1 && $token ne 'package';
-                last if $count == 2 && $token !~ m{\s+};
-                last if $count == 3 && $token !~ m{\w+(::\w+)*};
+                last TOKEN if $count == 1 && $token ne 'package';
+                last TOKEN if $count == 2 && $token !~ m{\s+};
+                last TOKEN if $count == 3 && $token !~ m{\w+(::\w+)*};
                 $name_token = $token if $count == 3;
-                last if $count == 4 && $token !~ m{\s+};
-                last if $count == 5 && $token ne '{';
+                last TOKEN if $count == 4 && $token !~ m{\s+};
+                last TOKEN if $count == 5 && $token ne '{';
 
                 if($count == 5) {
                     my $version_token = PPI::Token::Comment->new(" " . $self->zilla->version);
                     $name_token->insert_after($version_token);
                     $munged = 1;
                     $self->log([ 'adding version to %s in %s', $package, $file->name ]);
-                    last;
+                    last TOKEN;
                 }
             }
         }
         $self->save_ppi_document_to_file($document, $file) if $munged;
-    }
-
-    sub check_package_statements {
-        my $self = shift;
-        my $file = shift;
-        my $document = shift;
-
-        my $statements = $document->find('PPI::Statement::Package');
-        if(!$statements) {
-            $self->log_debug([ 'skipping %s: no package statement found', $file->name ]);
-        }
-        return $statements;
     }
 }
 
