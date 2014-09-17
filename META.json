@@ -24,6 +24,12 @@
       ]
    },
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::EOL" : "1.5",
+            "Test::Pod" : "1.45"
+         }
+      },
       "configure" : {
          "requires" : {
             "Module::Build::Tiny" : "0.037"
@@ -63,7 +69,7 @@
          "web" : "https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block"
       }
    },
-   "version" : "0.0101",
+   "version" : "0.0102",
    "x_contributors" : [
       "Erik Carlsson <info@code301.com>"
    ]

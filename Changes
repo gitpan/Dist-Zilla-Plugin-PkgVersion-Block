@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-Plugin-PkgVersion-Block
 
+0.0102 2014-09-17T23:09:34Z CEST
+ [Meta]
+ - Added build prereqs.
+
 0.0101 2014-09-16T21:05:40Z CEST
  [Meta]
  - Code cleanup

@@ -4,7 +4,9 @@ author:
   - 'Erik Carlsson <csson@cpan.org>'
 build_requires:
   Test::DZil: '0'
+  Test::EOL: '1.5'
   Test::More: '0.96'
+  Test::Pod: '1.45'
   autodie: '2.00'
 configure_requires:
   Module::Build::Tiny: '0.037'
@@ -33,6 +35,6 @@ resources:
   bugtracker: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block/issues
   homepage: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block
   repository: https://github.com/Csson/p5-Dist-Zilla-Plugin-PkgVersion-Block.git
-version: '0.0101'
+version: '0.0102'
 x_contributors:
   - 'Erik Carlsson <info@code301.com>'

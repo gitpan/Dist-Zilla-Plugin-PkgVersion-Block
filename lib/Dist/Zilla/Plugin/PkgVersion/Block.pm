@@ -1,5 +1,5 @@
 package Dist::Zilla::Plugin::PkgVersion::Block {
-$Dist::Zilla::Plugin::PkgVersion::Block::VERSION = '0.0101';
+$Dist::Zilla::Plugin::PkgVersion::Block::VERSION = '0.0102';
 use 5.14.0;
     use Moose;
     with('Dist::Zilla::Role::FileMunger',
